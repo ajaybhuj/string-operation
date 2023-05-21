@@ -7,10 +7,17 @@ export default function TextArea(props) {
     setText(newText);
   };
   const handleLoCase = () => {
-    // console.log("you have clicked on upper case botton" + text);
     let newText = text.toLowerCase();
     setText(newText);
   };
+  const handleClearCase = () => {
+    let newText = "";
+    setText(newText);
+  };
+  // const sentencesCount = () => {
+  //   let sentences = text.split(/[.?!]\s+/);
+  //   return sentences.length;
+  // };
 
   const handleOnChange = (e) => {
     console.log("on change");
@@ -38,12 +45,17 @@ export default function TextArea(props) {
         <button className="btn btn-primary mx-3" onClick={handleLoCase}>
           Convert to LOWERCASE
         </button>
+        <button className="btn btn-primary mx-3" onClick={handleClearCase}>
+          Reset
+        </button>
       </div>
       <div className="container">
-        <h1>Your Text Summary</h1>
+        <h2>Your Text Summary</h2>
         <p>
           {text.split(" ").length} words and {text.length} character
         </p>
+        <p></p>
+
         <p>{0.008 * text.split(" ").length} minutes read</p>
         <h2>Preview</h2>
         <p>{text}</p>
